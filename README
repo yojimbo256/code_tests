@@ -1,24 +1,12 @@
 3. Recommendations
-1. Patch & Upgrade
-Immediately update to the latest LTS release (11.0.22+ or current patch) to mitigate active CVEs
-
-Retire unpatched legacy JREs and consolidate multiple versions when possible
-
-2. Lock Down Runtime Environment
-Restrict Java network access via firewalls unless explicitly required by the application
-
-Use Java Security Manager and restrict file system and network permissions via policy files
-
-Disable or remove unused components (e.g., JavaFX, RMI if not needed)
-
-3. Supply Chain & Code Integrity
-Verify source origin for JAR files and digitally sign all custom Java applications
-
-Use SBOM tools (e.g., CycloneDX, OWASP Dependency-Check) to track third-party libraries and dependencies
-
-4. Monitoring & Detection
-Enable verbose logging and audit trails for Java applications that access sensitive data
-
-Use endpoint protection tools to monitor Java process behavior and block abnormal execution
-
-Incorporate Java-specific rules into SIEM (e.g., JNDI injection, classloader abuse)
+	1.	Patch & Upgrade
+	•	Ensure the agent is updated to the latest version to incorporate security patches.
+	2.	Secure Configuration
+	•	Restrict agent communication to authorized management servers.
+	•	Implement TLS encryption for data in transit.
+	3.	Access Controls
+	•	Limit administrative access to the agent.
+	•	Use role-based access controls within the Tripwire Enterprise console.
+	4.	Monitoring & Logging
+	•	Enable detailed logging for agent activities.
+	•	Regularly review logs for unauthorized or anomalous activities.
