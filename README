@@ -1,1 +1,147 @@
+⸻
 
+📄 README – GitLab Software Assurance Integration Plan (Neutral Draft)
+
+1. Purpose
+
+This document outlines a simple plan to migrate the existing software assurance workflow from SharePoint to GitLab.
+The goal is to centralize code, automate security checks, and generate reliable assurance artifacts, all within a Zero Trust access model.
+
+⸻
+
+2. Objectives
+	1.	Centralize all development code in a single GitLab environment.
+	2.	Automate security scanning and policy enforcement.
+	3.	Apply Zero Trust principles to access control.
+	4.	Produce clear, repeatable assurance reports.
+	5.	Replace manual SharePoint-driven tasks with GitLab-native workflows.
+
+⸻
+
+3. Scope (Initial Phase)
+	•	Included: Development software repositories and their associated assurance workflows.
+	•	Artifacts: Source code, pipelines, scan results, and security reports.
+	•	Excluded for now: Non-development repositories, deployment systems, legacy SharePoint document trails.
+
+The scope is intentionally narrow for a clean pilot rollout.
+
+⸻
+
+4. High-Level Architecture
+
+GitLab serves as a combined:
+	•	Source repository
+	•	Version control system
+	•	CI/CD automation engine
+	•	Security scanning hub
+	•	Evidence repository
+
+All activity is traceable and attributable to a user.
+
+⸻
+
+5. Zero Trust Considerations
+
+Zero Trust in this plan means:
+	•	No user or system is trusted by default.
+	•	Access is explicitly granted based on role.
+	•	Pipelines enforce mandatory checks before code can advance.
+	•	Every action is logged and reviewable.
+
+⸻
+
+6. Automated Security Controls
+
+Security scans that will be incorporated into GitLab pipelines:
+
+Initial Set
+	•	SAST: Detects insecure code patterns.
+	•	Dependency Scanning: Identifies vulnerable libraries.
+	•	Secret Detection: Prevents accidental credential commits.
+
+Expandable Set (Future)
+	•	DAST
+	•	Container Scanning
+	•	License Compliance
+
+Assurance Evidence
+
+Pipelines generate:
+	•	Vulnerability reports
+	•	SBOMs
+	•	Merge request security summaries
+	•	Pipeline audit logs
+
+These provide a consistent assurance trail.
+
+⸻
+
+7. Workflow Summary
+	1.	Developer commits code or opens a merge request.
+	2.	GitLab automatically runs all configured security checks.
+	3.	Merge requests cannot proceed until required scans pass.
+	4.	GitLab stores all reports and logs in the pipeline history.
+	5.	Reviewers or assurance personnel can view or export evidence at any time.
+
+⸻
+
+8. Access Control Model
+
+Roles are defined with least-privilege principles:
+	•	Developer: Commit code, submit merge requests.
+	•	Maintainer: Approve merges, adjust pipelines as needed.
+	•	Reviewer/Security: Read-only access to assurance outputs.
+	•	Administrator: Platform configuration only.
+
+Zero Trust means no role implicitly inherits additional privileges.
+
+⸻
+
+9. Migration from SharePoint
+
+SharePoint Activity	GitLab Replacement
+Manual file uploads	Structured commits to version control
+Manual change logs	Automated Git history
+Manually reviewing vulnerabilities	Automated scans on each commit
+Manually uploading documentation	Automatically generated pipeline artifacts
+Manual approval routing	Merge request review rules
+
+The GitLab workflow replaces manual, document-driven processes with automated, repeatable checks.
+
+⸻
+
+10. Initial Deliverables
+	•	Defined list of repositories entering GitLab assurance
+	•	Base pipeline template with required scans
+	•	Role and permission framework
+	•	Sample security reports
+	•	Documented workflow and expectations
+
+⸻
+
+11. Next Steps
+	1.	Finalize repository list and ownership.
+	2.	Build a prototype repository using the new workflow.
+	3.	Configure baseline SAST and dependency scanning.
+	4.	Validate reports and adjust gates.
+	5.	Expand pipelines as needed.
+	6.	Onboard development teams to the new workflow.
+
+⸻
+
+12. Current Status
+
+Planning stage.
+No configurations implemented yet.
+Next milestone: Establish repository structure and roles.
+
+⸻
+
+If you want, I can prepare:
+	•	A 1-page briefing version
+	•	A diagram-only version
+	•	A template pipeline (.gitlab-ci.yml)
+	•	A Zero Trust justification memo
+	•	A glossary for non-technical stakeholders
+
+Just tell me which one you want.
